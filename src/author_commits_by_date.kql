@@ -1,0 +1,7 @@
+﻿CommitHistory
+| join kind=inner (
+    FileChangeHistory
+) on commit
+| summarize commit_count=count() by author_name, author_date
+| order by commit_count desc
+| render areachart with (title="Commits by author")

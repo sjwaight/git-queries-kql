@@ -1,0 +1,4 @@
+﻿CommitHistory
+| extend week_start = startofweek(todatetime(commiter_date))
+| summarize count() by week_start
+| render linechart with (title="Commits by week")

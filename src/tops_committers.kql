@@ -1,0 +1,4 @@
+﻿CommitHistory
+| summarize commit_count=count() by author_name=author_name
+| order by commit_count desc
+| render piechart with (title="Volume of commits by author")
